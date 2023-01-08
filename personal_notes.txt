@@ -1,0 +1,44 @@
+How to:
+
+1. Plug in Keyboard normally
+  - 3.5mm connected between halves
+  - USB connected to left half
+
+2. Compile firmware
+  - qmk compile -kb maple_computing/minidox/rev1 -km default
+  - qmk compile -kb maple_computing/minidox/rev1 -km dustypomerleau
+  - qmk compile -kb maple_computing/minidox/rev1 -km bazzz
+
+3. Open QMK Toolbox
+  - Load .hex file
+  - Set Auto Flash
+
+4. Engage Reset Mode (RAISE + LOWER + Z)
+  - Left half should now be flashed
+
+5. Plug in USB to right half
+  - press reset button on bottom
+  - QMK Toolbox will flash
+
+6. Put USB back in normal spot
+
+* Only need to map the left side apparently
+
+-------------------------------------
+
+Shortcuts I use:
+
+CMD + q, w, r, t, y, p, a, s, d, f, h, l, z, x, c, v, b, n, m, ","
+CMD + Tab (CMD + ` to go back)
+CMD + `
+CMD + 123..
+CTRL + 1, 2, 3 (window management)
+CTRL + SHIFT + PG Up/Pg Down
+CTRL + SHIFT + J (join lines in sublime) 
+Option + Arrows (move to front/end of word)
+Option + Shift + Arrows (move to front/end of word with highlight)
+CMD + SHIFT + F (sublime find alyl)
+CMD + SHIFT + P (in sublime)
+CMD + SHIFT + J (in browser open)
+
+
