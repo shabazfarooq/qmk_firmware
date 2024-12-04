@@ -26,6 +26,10 @@ How to:
 
 -------------------------------------
 
+Spelling test:
+new mom xenon zebra boy van cat
+
+
 Shortcuts I use:
 
 CMD + q, w, r, t, y, p, a, s, d, f, h, l, z, x, c, v, b, n, m, ","
