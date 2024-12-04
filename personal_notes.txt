@@ -1,4 +1,15 @@
-How to:
+How to make changes to layout:
+
+1. Open ~/qmk_firmware/keyboards/maple_computing/minidox/keymaps/bazzz
+
+2. Make changes to:
+  - config.h
+  - keymap.c
+  - rules.mk
+
+
+
+How to flash layout:
 
 1. Plug in Keyboard normally
   - 3.5mm connected between halves
@@ -7,20 +18,13 @@ How to:
 2. Compile firmware
   - qmk compile -kb maple_computing/minidox/rev1 -km default
   - qmk compile -kb maple_computing/minidox/rev1 -km dustypomerleau
-  - qmk compile -kb maple_computing/minidox/rev1 -km bazzz
+  >> qmk compile -kb maple_computing/minidox/rev1 -km bazzz
 
 3. Open QMK Toolbox
-  - Load .hex file
+  - Load .hex file: /Users/shabazfarooq/qmk_firmware/.build/maple_computing_minidox_rev1_bazzz.hex
   - Set Auto Flash
 
-4. Engage Reset Mode (RAISE + LOWER + Z)
-  - Left half should now be flashed
-
-5. Plug in USB to right half
-  - press reset button on bottom
-  - QMK Toolbox will flash
-
-6. Put USB back in normal spot
+4. Engage Reset Mode (hold t + press q)
 
 * Only need to map the left side apparently
 
