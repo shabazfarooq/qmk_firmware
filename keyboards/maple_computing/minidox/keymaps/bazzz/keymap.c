@@ -54,7 +54,7 @@ enum custom_keycodes {
 
 #define SY_J LGUI_T(KC_LCBR) // {   <-- override in switch
 #define SY_K LALT_T(KC_RCBR) // }   <-- override in switch
-#define SY_L LCTL_T(KC_DQUO) // "   <-- override in switch
+#define SY_L LCTL_T(KC_TILD) // ~   <-- override in switch
 #define SY_C LSFT_T(KC_QUOT) // '   <-- good
 
 //
@@ -91,14 +91,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /**
  * 
  *  !    @    #    $    %        ^    (    )    |    _
- *  -    &    *    +    =        ~    {    }    "    '
+ *  -    &    *    +    =        "    {    }    ~    '
  *  m    m    m    m    =             [    ]         \
  * 
  * 
  */
 [_SYMBOLS] = LAYOUT_split_3x5_3(
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,       KC_CIRC, KC_LPRN, KC_RPRN, KC_PIPE, KC_UNDS,
-  SY_A,    SY_S,    SY_D,    SY_F,    KC_EQL,        KC_TILD, SY_J,    SY_K,    SY_L,    SY_C,
+  SY_A,    SY_S,    SY_D,    SY_F,    KC_EQL,        KC_DQUO, SY_J,    SY_K,    SY_L,    SY_C,
   MA_Z,    MA_X,    MA_C,    MA_V,    MA_B,          _______, KC_LBRC, KC_RBRC, _______, KC_BSLS,
                     _______, _______, _______,       _______, KC_DEL,  _______                   
 ),
@@ -224,9 +224,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
-    case LCTL_T(KC_DQUO):
+    case LCTL_T(KC_TILD):
       if (record->tap.count && record->event.pressed) {
-        tap_code16(KC_DQUO);
+        tap_code16(KC_TILD);
         return false;
       }
       break;
