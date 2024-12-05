@@ -1,1 +1,1 @@
-#define TAPPING_TERM 200 // default: 200
+#define TAPPING_TERM 140 // default: 200
