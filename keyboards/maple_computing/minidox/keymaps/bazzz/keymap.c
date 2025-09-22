@@ -4,7 +4,8 @@ enum layer_names {
   _QWERTY,
   _SYMBOLS,
   _NUMBERS,
-  _ADJUST,
+  _FUNCTION,
+  // _ADJUST,
   _BOOT
 };
 
@@ -22,6 +23,7 @@ enum custom_keycodes {
 #define SYMBOLS LT(_SYMBOLS, KC_BSPC)
 #define NUMBERS LT(_NUMBERS, KC_SPC)
 #define BOOT LT(_BOOT, KC_T)
+#define FUNCTION LT(_FUNCTION, KC_0)
 
 //
 // Qwerty layer
@@ -74,9 +76,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |   Z  |   X  |   C  |   V  |   B  |           |   N  |   M  |   ,  |   .  |   /  |
  * `----------------------------------'           `----------------------------------'
- *                  ,---------------------.    ,------,--------------.
- *                  |      |SYMBOLS|      |    |      |NUMBERS|      |
- *                  `--------------| TAB  |    |ENTER |------+-------.
+ *                  ,---------------------.    ,------,----------------.
+ *                  |      |SYMBOLS|      |    |      |NUMBERS|FUNCTION|
+ *                  `--------------| TAB  |    |ENTER |------+---------.
  *                                 |      |    |      |
  *                                 `------'    `------'
  */
@@ -84,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_Q,    KC_W,    KC_E,    KC_R,    BOOT,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
   QW_A,    QW_S,    QW_D,    QW_F,    KC_G,         KC_H,    QW_J,    QW_K,    QW_L,    QW_C,
   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-                 _______, SYMBOLS,   TAB,        KC_ENT,   NUMBERS,  _______
+                 _______, SYMBOLS,   TAB,        KC_ENT,   NUMBERS,  FUNCTION
 ),
 
 
@@ -118,15 +120,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               _______, _______,   KC_0,         _______, _______, _______
 ),
 
+/**
+ * 
+ *         F7    F8    F9                                          
+ *         F4    F5    F6                 F10   F11   F12          
+ *         F1    F2    F3                                          
+ * 
+ */
+[_FUNCTION] = LAYOUT_split_3x5_3(
+  _______, KC_F7, KC_F8, KC_F9, _______,      _______, _______, _______, _______,  _______,
+  _______, KC_F4, KC_F5, KC_F6, _______,      KC_F10,   KC_F11,  KC_F12, _______,  _______,
+  _______, KC_F1, KC_F2, KC_F3, _______,      _______, _______, _______, _______,  _______,
+                    _______, _______, _______,      _______, _______, _______
+),
 
 
+/**
 [_ADJUST] = LAYOUT_split_3x5_3(
   LSFT(KC_Q),    LSFT(KC_W),    LSFT(KC_E),    LSFT(KC_R),    LSFT(KC_T),         LSFT(KC_Y),    LSFT(KC_U),    LSFT(KC_I),    LSFT(KC_O),    LSFT(KC_P),
   LSFT(KC_A),    LSFT(KC_S),    LSFT(KC_D),    LSFT(KC_F),    LSFT(KC_G),         LSFT(KC_H),    LSFT(KC_J),    LSFT(KC_K),    LSFT(KC_L),    LSFT(KC_C),
   LSFT(KC_Z),    LSFT(KC_X),    LSFT(KC_C),    LSFT(KC_V),    LSFT(KC_B),         LSFT(KC_N),    LSFT(KC_M),    LSFT(KC_COMM), LSFT(KC_DOT),  LSFT(KC_SLSH),
                  _______, _______, _______,      _______, _______, _______
 ),
-
+ */
 
 [_BOOT] =  LAYOUT_split_3x5_3(
   QK_BOOT, _______, _______, _______, _______,      _______, _______, _______, _______,  _______,
