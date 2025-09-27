@@ -110,13 +110,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * 
  *  ESC    7    8    9    GO+        ZO+    PU    UP    PD    V+
  *  GRV    4    5    6    GO-        ZO-    LE    DW    RI    V-
- *  CAP    1    2    3    =          B-     B+                VX
+ *  CAP    1    2    3    =          B+     B-                VX
  * 
  */
 [_NUMBERS] = LAYOUT_split_3x5_3(
   KC_ESC,   KC_7,  KC_8,  KC_9,  G(KC_RBRC),       G(KC_PPLS),   KC_PGUP,   KC_UP,     KC_PGDN,   KC_KB_VOLUME_UP,
   NU_A,     NU_S,  NU_D,  NU_F,  G(KC_LBRC),       G(KC_PMNS),   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_KB_VOLUME_DOWN,
-  KC_CAPS,  KC_1,  KC_2,  KC_3,  KC_PEQL,          KC_BRID,      KC_BRIU,   _______,   _______,   KC_KB_MUTE,
+  KC_CAPS,  KC_1,  KC_2,  KC_3,  KC_PEQL,          KC_BRIU,      KC_BRID,   _______,   _______,   KC_KB_MUTE,
               _______, _______,   KC_0,         _______, _______, _______
 ),
 
